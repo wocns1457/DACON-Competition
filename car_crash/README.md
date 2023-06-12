@@ -34,13 +34,26 @@
 
 - ego-Involve, weather, timing의 정보는 '차량 충돌 사고'가 일어난 경우에만 분석합니다.
 
-<p align="center">
-<img src = "https://dacon.s3.ap-northeast-2.amazonaws.com/competition/236064/editor-image/1675581601829146.jpeg" width="70%" height="70%">
-</p>
+|crash |ego-Involve|weather |timing|label|
+|:------:|:---:|:---:|:---:|:---:|
+|NO|-|-|-|0|
+|Yes|Yes|Normal|Day|1|
+|Yes|Yes|Normal|Night|2|
+|Yes|Yes|Snowy|Day|3|
+|Yes|Yes|Snowy|Night|4|
+|Yes|Yes|Rainy|Day|5|
+|Yes|Yes|Rainy|Night|6|
+|Yes|No|Normal|Day|7|
+|Yes|No|Normal|Night|8|
+|Yes|No|Snowy|Day|9|
+|Yes|No|Snowy|Night|10|
+|Yes|No|Rainy|Day|11|
+|Yes|No|Rainy|Night|12|
+
+## 대회 전략
 
 
-## 데이터 전처리
 
-## 모델링
+
 
 
