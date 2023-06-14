@@ -77,11 +77,11 @@ Crash + ego-Involve &nbsp; - &nbsp; 0 : No Crash, 1 : ego-Non Involve, 2 : ego-I
 - class imbalance 문제 해결 
      - Weighted random sampler
      - Data argumentation
-            - HorizontalFlip
-            - RandomRoatate90
-            - GaussNoise
-            - RGBShift
-            - Normalize  
+          - HorizontalFlip
+          - RandomRoatate90
+          - GaussNoise
+          - RGBShift
+          - Normalize  
 
 **-Crash + ego-Involve-**  
 - Slowfast_r101(pre-trained KINETICS400)  
