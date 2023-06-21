@@ -13,7 +13,9 @@
 10프레임, 5초 분량의 블랙박스 영상(mp4)들을 입력으로 받아 자동차 충돌 상황을 분석하여,
 이를 13가지 상황(Class)으로 분류하는 AI 모델 개발
 
-주최 : 코리아스타트업포럼(사) &ensp; 주관 : 데이콘
+### 주최/주관   
+- 주최 : 코리아스타트업포럼(사)
+- 주관 : 데이콘
 
 
 ## 데이터 설명
@@ -60,6 +62,17 @@ test.csv [파일]
 |Yes|No|Rainy|Day|11|
 |Yes|No|Rainy|Night|12|
 
+## Environment  
+Google Colab pro+를 사용하여 대회를 진행하였습니다.
+- OS : Ubuntu 20.04.5 LTS
+- GPU : NVIDIA A100 40GB
+
+- python == 3.9.16
+- torch == 1.13.1+cu116
+- torchvision == 0.14.1+cu116
+- albumentations == 1.2.1
+- slowfast 
+
 ## 대회 전략
 13가지의 차량 충돌 상황을 crash + ego-Involve, weather, timing으로 label을 분해하여 각각의 상황을 분류하는 3개 모델을 훈련  
 추론 시 각각의 예측 결과를 합하는 방법으로 진행
@@ -97,7 +110,7 @@ Crash + ego-Involve &nbsp; - &nbsp; 0 : No Crash, 1 : ego-Non Involve, 2 : ego-I
 - Mixup, CutMix 추가  
 - Label smoothing  
 - Custom voting
-  - 50Frame 입력영상을 특정구간 32frame씩 5개의 데이터를 생성 후 예측 수행. Normal, Snow, Rain이 모두 예측 결과에 포함된다면 Snow, Rain중 더 많이 예측 된 클래스를 선택하는 방식. validation, test에 모두 적용
+  - 50frame 입력영상을 특정구간 32frame씩 5개의 데이터를 생성 후 예측 수행. Normal, Snow, Rain이 모두 예측 결과에 포함된다면 Snow, Rain중 더 많이 예측 된 클래스를 선택하는 방식. validation, test에 모두 적용
 
 
 
