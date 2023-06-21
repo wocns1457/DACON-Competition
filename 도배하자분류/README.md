@@ -52,16 +52,16 @@ Google Colab pro를 사용하여 대회를 진행하였습니다.
 
 ```mermaid
 graph TD;
-    input-->3label_model;
-    3label_model-->type0;
-    3label_model-->type1;
-    3label_model-->type2;
+    input-->label3_model;
+    label3_model-->type0;
+    label3_model-->type1;
+    label3_model-->type2;
     type0-->type0_model-->output;
     type1-->type1_model-->output;
     type2-->type2_model-->output;
 ```
 
-input으로 들어오는 데이터를 type0, type1, type2로 분류하는 3label_model과 3가지 type으로 분류된 데이터를 다시 기존에 정의되있는 class로 분류하는 type0_model, type1_model, type2_model 3가지 모델로 구성하여 대회를 진행하였습니다.
+Input으로 들어오는 데이터를 type0, type1, type2로 분류하는 label3_model과 3가지 type으로 분류된 데이터를 다시 기존에 정의되있는 class로 분류하는 type0_model, type1_model, type2_model 3가지 모델로 구성하여 대회를 진행하였습니다.
 
 **-공통-**  
 - 각 클래스마다 잘못 라벨링된 데이터 제거
@@ -78,7 +78,7 @@ input으로 들어오는 데이터를 type0, type1, type2로 분류하는 3label
 - Focal Loss
 - Label smoothing
 
-**-3label_model, type0_model, type2_model-**  
+**-label3_model, type0_model, type2_model-**  
 
 사전 학습된 Efficientnet_v2_m를 사용하여 각 데이터에 맞게 레이어를 추가하여 학습  
 
@@ -87,7 +87,7 @@ input으로 들어오는 데이터를 type0, type1, type2로 분류하는 3label
 전체 훈련 데이터에서 type1으로 분류한 데이터를 확인해 보았을 때 서로 다른 클래스지만 비슷한 모습을 띠는 클래스들이 존재하고 몇몇 클래스는 데이터의 수가 10개 미만인 데이터도 존재하였기에 다른 모델처럼 학습하는 방식과 다른 방식으로 기존의 feature로는 분류가 쉽지 않았던 데이터에 대해 데이터를 class label 별로 잘 구분할 수 있게 만드는 metric learning을 적용해 보았습니다. 거리 기반 함수를 기반으로 각 클래스의 특징을 잘 나타낼 수 있는 모델을 훈련하고, 이후 모델을 통과한 임베딩 벡터를 통해 K-NN Classifier를 이용해 분류하였습니다.
 
 **Summary**
-| 3label | type0 | type1 | type2 |
+| label3 | type0 | type1 | type2 |
 | :---: | :---: | :---: | :---: |
 | Efficientnet_v2_m <br> Focal Loss <br> Label smoothing <br> AdamW <br> OneCycleLR | Efficientnet_v2_m <br> Weighted random sampler <br> Focal Loss <br> Label smoothing <br> AdamW <br> OneCycleLR | Efficientnet_v2_m <br> K-NN Classifier <br> Weighted random sampler <br> ArcFace module <br> Focal Loss <br> Label smoothing <br> AdamW <br> OneCycleLR | Efficientnet_v2_m <br> Weighted random sampler <br> Focal Loss <br> Label smoothing <br> AdamW <br> OneCycleLR | 
 
