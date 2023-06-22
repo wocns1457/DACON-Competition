@@ -80,11 +80,14 @@ Input으로 들어오는 데이터를 type0, type1, type2로 분류하는 label3
 
 **-label3_model, type0_model, type2_model-**  
 
-사전 학습된 Efficientnet_v2_m를 사용하여 각 데이터에 맞게 레이어를 추가하여 학습  
+사전 학습된 Efficientnet_v2_m(pre-trained on ImageNet-in21ft1k)을 사용하여 각 데이터에 맞게 레이어를 추가하여 학습  
 
 **-type1_model-**   
 
-전체 훈련 데이터에서 type1으로 분류한 데이터를 확인해 보았을 때 서로 다른 클래스지만 비슷한 모습을 띠는 클래스들이 존재하고 몇몇 클래스는 데이터의 수가 10개 미만인 데이터도 존재하였기에 다른 모델처럼 학습하는 방식과 다른 방식으로 기존의 feature로는 분류가 쉽지 않았던 데이터에 대해 데이터를 class label 별로 잘 구분할 수 있게 만드는 metric learning을 적용해 보았습니다. 거리 기반 함수를 기반으로 각 클래스의 특징을 잘 나타낼 수 있는 모델을 훈련하고, 이후 모델을 통과한 임베딩 벡터를 통해 K-NN Classifier를 이용해 분류하였습니다.
+전체 훈련 데이터에서 type1으로 분류한 데이터를 확인해 보았을 때 서로 다른 클래스지만 비슷한 모습을 띠는 클래스들이 존재하고 몇몇 클래스는 데이터의 수가 10개 미만인 데이터도 존재하였기에 다른 모델처럼 학습하는 방식과 다른 방식으로 기존의 feature로는 분류가 쉽지 않았던 데이터에 대해 데이터를 class label 별로 잘 구분할 수 있게 만드는 metric learning을 적용해 보았습니다. 거리 기반 함수를 기반으로 각 클래스의 특징을 잘 나타낼 수 있는 모델을 훈련하고, 이후 모델을 통과한 임베딩 벡터를 통해 K-NN Classifier를 이용해 분류하였습니다.  
+- Efficientnet_v2_m(pre-trained on ImageNet-in21ft1k)
+- ArcFace module
+-  K-NN Classifier
 
 **Summary**
 | label3 | type0 | type1 | type2 |
