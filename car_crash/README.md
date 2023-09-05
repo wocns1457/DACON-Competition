@@ -1,6 +1,7 @@
 # Dacon_car_crash_Competition
+제1회 코스포 x 데이콘 자동차 충돌 분석 AI경진대회(채용 연계형) - DACON  
+- ipynb파일 랜더링 오류 발생시 [Nbviewer Dacon_car_crash_Competition.ipynb](https://nbviewer.org/github/wocns1457/DACON-Competition/blob/main/car_crash/Dacon_car_crash_Competition.ipynb)
 
-제1회 코스포 x 데이콘 자동차 충돌 분석 AI경진대회(채용 연계형) - DACON
 
 ### 배경
 최근 블랙박스를 활용해 도로 위에서의 사고를 예방하려는 연구가 다양하게 진행되고 있습니다.
