@@ -1,5 +1,6 @@
 # Dacon_car_crash_Competition
 제1회 코스포 x 데이콘 자동차 충돌 분석 AI경진대회(채용 연계형) - DACON  
+- 발표자료 https://dacon.io/competitions/official/236064/codeshare/7781?page=1&dtype=recent
 - ipynb파일 랜더링 오류 발생시 [Nbviewer Dacon_car_crash_Competition.ipynb](https://nbviewer.org/github/wocns1457/DACON-Competition/blob/main/car_crash/Dacon_car_crash_Competition.ipynb)
 
 
